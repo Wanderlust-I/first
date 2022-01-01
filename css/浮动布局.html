@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            width: 200px;
+            height: 200px;
+            border:1px solid red;
+            float: left;
+        }
+        .aside{
+            width: 200px;
+            height: 200px;
+            border:1px solid rgb(92, 38, 38);
+            float:left;
+        }
+        .nm{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+       .clear::after,.clear::before{
+           content:"";
+          display: block;
+           clear:both;
+       }
+    </style>
+</head>
+<body>
+    <div class="container clear">
+        <div class="content">内容</div>
+    <div class="aside">边栏</div> 
+ </div>
+  <div class="nm"></div>
+  
+</body>
+</html>
