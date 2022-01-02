@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //跟以前学过的语言差不多，扫一眼
+        var firstWord ="hello world"; 
+        var s1="hello ";
+        var s2 ="world";
+        // 弹窗
+        alert(firstWord);
+         console.log(s1);
+        console.log(s2);
+        console.log(20+30); 
+        console.log("20"+"30");//字符串相连
+        console.log(20+"30");//字符和数字相加统一为字符串
+        console.log("10>20");//比较运算符返回布尔型
+        //console.log(20=="20");//结果为ture（不比较数据类型，内部会自动转换成相同类型再比较）
+        console.log(20==="20");//恒等于运算符，既比较值又比较数据类型
+        //所以考虑到性能，更多用===，同理！=和！==用！==多
+        var x=10,y=20;
+        y+=x;//等同于y=y+x
+        console.log(y);
+        var username="admin",password="123";
+        console.log(username==="admin"||password==="123");//与&& 或|| 非！
+        //条件语句:if,switch，三目运算符
+        var num1=10,num2=20,op="/";
+        switch(op){
+          case "+":console.log(num1+num2);break;
+          case "-":console.log(num1-num2);break;
+          case "*":console.log(num1*num2);break;
+          case "/":console.log(num1/num2);break;
+          default:console.log("无");break;   
+        }
+
+    </script>
+</body>
+</html>
