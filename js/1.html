@@ -37,7 +37,55 @@
           case "/":console.log(num1/num2);break;
           default:console.log("无");break;   
         }
+        //循环语句 while ,do while,for
+        var i=0;
+        do{
+            if(i%2===0){
+                console.log(i);
+            }
+            i++;  
+        }while(i<10)
 
+        for(var i=0;i<=100;i++){
+         if(i%2!==0){
+              console.log(i);
+         }
+        }
+
+        var sum=0;
+        for(var i=0;i<=100;i++){
+           sum+=i;
+        }
+console.log(sum);
+        //函数
+        function fun(n){
+            var sum=0;
+            for(var i=0;i<=n;i++){
+               sum+=i;
+           }
+           return sum;
+        }   
+        console.log(fun(100));
+        //对象
+        var girlfriend={
+           name:"在哪",//注意是逗号哦！！
+           age:18, 
+           //属性也可以是函数，则该属性为方法
+          myName:function (){
+               console.log("我的名字是"+this.name);
+                //this代表该对象
+       }
+        }
+        //获取对象属性的方法
+        console.log(girlfriend.name);
+        console.log(girlfriend["name"]);
+        //但是，当要调用的不是对象里的属性时，直接.是不行的
+        var str="name";
+        console.log(girlfriend[str]);
+        //对属性赋值，对象的属性就会发生改变
+        girlfriend.name="？";
+        console.log(girlfriend.name);
+        girlfriend.myName();
     </script>
 </body>
 </html>

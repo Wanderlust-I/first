@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var list1=[1,2,3,4];
+        //数组的另一种形式，构造函数
+        var list2=new Array(1,2,3,4);
+        console.log(list1[0]);
+        console.log(list1.length);//数组自身很重要的长度属性
+         //遍历数组的方法 while ,for , for in ,for of,map
+         for(var i in list1){
+               console.log(list1[i]);
+         }//for in的i为list的索引
+   
+         for(var i of list1){
+           console.log(i);
+         }//for of的i为list的值
+
+         
+    </script>
+    
+    
+</body>
+</html>
