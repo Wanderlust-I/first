@@ -22,7 +22,76 @@
            console.log(i);
          }//for of的i为list的值
 
+         list1.map(function(value,index)//value为值，index为索引
+         {
+             console.log("第"+(index+1)+"个值为"+value)
+
+         });//map的参数是个函数，该函数为回调函数
+    
+         list1.push(5);//push往数组末端加值
+
+         list1.pop(5);//pop删除数组末端值
+
+         list1.unshift(0);//shift往数组头部加值
+
+         list1.shift(0);//unshift删除数组头部值
+
+         var list=[2,5,6,4,0];
+         list.sort();//sort可以进行排序
+
+         //filter过滤函数
+    //    var arr=  list.filter(function(item){
+    //           if(item>2)
+    //            return item;
+    //      })
+    //      console.log(arr); 
+
+//          var list=["a","b","c"];
+//join连接函数，函数内不加参数则含有逗号为a,b,c,里面为""则为abc"
+//          var ar=list.join("+");//结果为a+b+c
+//          console.log(ar);
+
+//string的split函数，作用与join相反
+        // var str="banana";
+        // var list=str.split("");
+         //结果为['b', 'a', 'n', 'a', 'n', 'a']
+        // var list=str.split("n");
+         //结果为['ba', 'a', 'a']
+        // console.log(list);
+
          
+         //存放对象的数组
+            var list=[
+        {name:"小明",age:2,sex:"男"},
+         {name:"小红",age:2,sex:"女"},
+          {name:"小亮",age:2,sex:"男"},
+            ]
+
+            //问题：找出所有男同学，放入一个新数组
+            
+            //1.
+            // var newl=list.filter(function(item){
+            //     if(item.sex==="男"){
+            //       return item;
+            //     }
+            // });
+
+            //2.
+        //    var newl=list.filter(function(item,index,arr){
+        //           if(arr[index].sex==="男"){
+        //                  return item;
+        //           }
+        //    });
+        
+        //3.
+        // var newl=[];
+        // for(var i=0;i<list.length;i++){
+        //     if(list[i].sex==="男"){
+        //         newl.push(list[i]);
+        //     }
+
+        // }
+           console.log(newl);
     </script>
     
     

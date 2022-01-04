@@ -1,0 +1,38 @@
+
+body{
+    background-color: darkslategray;
+    color: white;
+    font-family:monospace;
+    font-size: 18px;
+}
+
+li{
+display: inline;    
+}
+ul{
+    padding: 0;
+}
+
+a{
+    color: white;
+     text-decoration: none;
+     padding: 5px 10px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+.search{
+    margin-top: 200px;
+    font-size: 50px;
+    text-align: center;
+}
+
+input{
+    width: 500px;
+    font-size: 18px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none; /*取消高亮*/
+}
