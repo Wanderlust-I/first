@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header,section,footer{
+    background-color: pink;
+    width: 1000px;
+
+}
+    section{
+        margin: 20px auto;
+        overflow: hidden;
+    }
+    header,footer{
+        margin: 0 auto;
+        height: 80px;
+    }
+   section>div/*用>划分好区域很重要*/{
+       background-color:yellow;
+       float: left;
+   }
+   .left{
+       width: 680px;
+       margin-right: 20px;
+   }
+   .right{
+       width: 300px;
+   }
+   .left>div:nth-child(-n+2)/*重要的子元素选择器，-n+2表示从第一到第二个*/
+   {
+       margin-bottom: 20px;
+   }
+   .left>div{
+       background-color: blue;
+       height: 200px;
+   }
+   .right>div:nth-child(-n+3){
+       margin-bottom: 20px;
+   }
+   .right>div{
+       background-color: blue;
+       height: 150px;
+   }
+   .left1{
+       overflow: hidden;
+   }
+   .left1>div{
+       background-color:green;
+       height: 200px;
+       float: left;
+   }
+   .left11{
+       width: 180px;
+       margin-right:20px;
+   }
+   .left12{
+       width:480px;
+   }
