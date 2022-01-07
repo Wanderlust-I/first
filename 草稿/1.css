@@ -1,0 +1,53 @@
+header,section,footer{
+    background-color: pink;
+    width: 1000px;
+}
+section{
+    margin: 20px auto; 
+    overflow: hidden;  
+}
+ header,footer{
+        margin:0 auto;
+        height: 80px;
+}
+section>div{
+    background-color: yellow;
+    float: left;
+}
+.left{
+    width: 680px;
+    margin-right: 20px;
+}
+.right{
+    width: 300px;
+}
+.left>div{
+    background-color: yellowgreen;
+    height: 200px;
+}
+.left>div:nth-child(-n+2){
+    margin-bottom: 20px;
+}
+.right>div{
+    background-color: yellowgreen;
+    height: 150px;
+}
+
+.right>div:nth-child(-n+3){
+    margin-bottom: 30px;
+}
+.left1{
+    overflow: hidden;
+}
+.left1>div{
+background-color: tomato;
+height: 200px;
+float: left;
+}
+.left11{
+    width: 180px;
+    margin-right: 20px;
+}
+.left12{
+    width:480px ;
+}

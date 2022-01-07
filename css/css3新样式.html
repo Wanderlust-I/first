@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+           border: 1px solid red;
+           border-radius:30px; /*该值设成50%即为圆，当长宽不相等时50%则为椭圆*/ 
+            /*关于参数：四个值时：左上 右上 右下 左下  两个值：左上右下 右上左下*/
+            background-color: yellow;
+            box-shadow:  10px 10px 30px  red;/*设置阴影，参数：x轴偏移量 y轴偏移量 模糊半径 颜色*/
+            /*形变*/
+            transform:rotate(60deg); /*旋转 deg表示角度*/
+            transform: scale(2); /*缩放*/
+            transform: translate(60px,50px) ;/*位移  参数：横坐标，纵坐标*/
+            /*上面的transform会被下面的覆盖，要想实现多个形变可以这样:*/
+            transform: rotate(45deg) scale(2) translate(50px,60px);
+            
+        }
+        .box2{
+            /*实现水平垂直居中*/
+            background-color:blue;
+            width: 100px;
+            height: 100px;
+            position:absolute;/*绝对定位使元素左上角位于中间，再进行下面的平移*/
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

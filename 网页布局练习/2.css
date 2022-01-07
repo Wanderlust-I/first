@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header,section,footer{
+    background-color:pink;
+    width: 700px;
+    margin: 0 auto;
+}
+section{
+    margin:20px auto ;
+    overflow: hidden;
+
+}
+header{
+    width: 800px;
+    height: 80px;
+}
+footer{
+    height: 800px;
+    overflow: hidden;
+}
+section>div{
+    background-color: yellow;
+    height: 150px;
+    width: 150px;
+    float: left;
+}
+
+section>div:nth-child(-n+2){
+ margin-right: 80px;
+}
+footer>div{
+    background-color: yellow;
+    height: 800px;
+    float: left;
+}
+.left{
+    width: 180px;
+    margin-right:20px;;
+}
+.right{
+    width: 500px;
+}
+.left>div{
+    background-color: tomato;
+    height: 150px;
+}
+.up{
+    width: 150px;
+    margin: 50px auto;
+}
+.down{
+    width: 160px;
+    margin: 0 auto;
+}
