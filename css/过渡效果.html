@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px auto;
+            /* transition属性可以被指定为一个或多个 CSS 属性的过渡效果，多个属性之间用逗号进行分隔。 */
+            /*transition: 属性  过渡的时间  函数（例如linear匀速）  delay延迟（例如鼠标移入后多久执行） */
+            transition:transform 2s linear 1s,width 2s linear 1s;
+        }
+        div:hover{
+            /* origin可以设置旋转点例如0 0 为左上角*/
+            transform-origin: 0 0;
+            transform: rotate(50deg);
+            width: 500px;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

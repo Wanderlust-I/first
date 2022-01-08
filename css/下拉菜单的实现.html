@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .menu>li{
+            float: left;
+            border: 1px solid green;
+        }
+        .item>li{
+            height: 0px;
+            overflow: hidden;  /*将高度设为0，然后hidden将文字隐藏*/
+            transition:height 1s ;
+        }
+        .menu>li:hover>.item>li{      /*这里是鼠标停在menu的li上，然后item下的li发生改变，所以过渡效果也放在item下的里*/
+            height: 30px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <ul class="">书籍
+        <li>html</li>
+    <li>css</li>
+    <li>js</li>
+</ul>
+<ul>书籍
+    <li>html</li>
+<li>css</li>
+<li>js</li>
+</ul>
+<ul>书籍
+    <li>html</li>
+<li>css</li>
+<li>js</li>
+</ul> -->
+<!-- 上面靠自己感觉写的感觉有问题？ -->
+
+
+<ul class="menu">
+    <li>书籍
+        <ul class="item">
+            <li>html</li>
+            <li>css</li>
+            <li>js</li>
+        </ul>
+    </li>
+    <li>书籍
+        <ul class="item">
+            <li>html</li>
+            <li>css</li>
+            <li>js</li>
+        </ul>
+    </li>
+    <li>书籍
+        <ul class="item">
+            <li>html</li>
+            <li>css</li>
+            <li>js</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
