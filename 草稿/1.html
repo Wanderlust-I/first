@@ -4,28 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="1.css">
     <title>Document</title>
-
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+    .main>li{
+        float: left;
+        width: 100px;
+        height: 20px;
+        border: 1px solid red;
+        overflow: hidden;
+        text-align: center;
+        transition: overflow 2s linear 2s;
+    }
+    .main>li:hover{
+        overflow: visible ;
+    }
+</style>
 <body>
-    <header></header>
-    <section>
-        <div class="left">
-            <div class="left1">
-                <div class="left11"></div>
-                <div class="left12"></div>
-            </div>
-            <div class="left2"></div>
-            <div class="left3"></div>
-        </div>
-        <div class="right">
-            <div class="right1"></div>
-            <div class="right2"></div>
-            <div class="right3"></div>
-            <div class="right4"></div>
-        </div>
-    </section>
-    <footer></footer>
-</body>
+        <ul class="main">
+            <li>菜单
+                <ul class="m">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li>菜单
+            <ul class="m">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </li>
+    <li>菜单
+        <ul class="m">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</li>
+            
+        </ul>
+</body> 
 </html>

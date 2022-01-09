@@ -16,10 +16,10 @@
             transition:transform 2s linear 1s,width 2s linear 1s;
         }
         div:hover{
-            /* origin可以设置旋转点例如0 0 为左上角*/
-            transform-origin: 0 0;
+            /* origin可以设置旋转点例如0 0 为左上角,但与传统的xy轴不一样，元素中心是50% 50%，元素左下角为0 100%，以此类推*/
+            transform-origin:0 0; /* 左上角也可写为left top 左下角可为left bottom，其他同理*/
             transform: rotate(50deg);
-            width: 500px;
+           
 
         }
     </style>
