@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            /*[]：范围  [a-z]：小写字母、[0-9]：数字、[A-Z]：大写字母
+                {} ：位数   例如/^[a-z]{3}$/表示要三位都是字母    {5,8}：只能 5~8 位之间。
+                () ：分组
+                + ：匹配 1 位或多位，同{1,}
+                ?：0 位或 1 位
+                .:匹配所有，但空字符串不行
+                \ ：转义字符
+                \d :数字
+                \w:数字字母下划线
+                \s:空格换行
+                g:全局匹配
+            */
+            var str="as3";
+            var reg=/^[a-z]{2,5}$/; //另一种写法new reg= new RegExp(".....");
+            console.log(reg.test(str));//test的返回值为bool
+            consloe.log(reg.exec(str)); //exec的返回值为匹配的内容
+        </script>
+</body>
+</html>

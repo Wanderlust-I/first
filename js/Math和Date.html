@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //常用的内置对象：Array数组，Math数学，Date日期，RegExp正则表达式
+      var num=-3.33;
+      var result=Math.floor(num);
+      var result=Math.random();//获取0到1的随机数
+      var result=Math.floor(Math.random()*10+1);//获取1到10的随机整数
+      var result=Math.abs(num);//取绝对值
+      var result=Math.sqrt(16,2);//开方
+      var result=Math.pow(num,2);
+      console.log(result);
+      //随机输出数组内的数字
+      var list=[1,2,3,4,4,5,56,5];
+      console.log(list[Math.floor(Math.random()*list.length)]);
+        
+      var d=new Date(); //从获取d这一刻开始  年月秒等已经定了
+      console.log(d);
+      var year=d.getFullYear();//取年份
+      var month=d.getMonth();//月份  注意从0开始  1月是0 12月是11
+         var date = d.getDate();//取日期
+         var day = d.getDay();//取星期
+        console.log(d.getTime());//时间簇 
+        var hours = d.getHours();//时
+        var minutes = d.getMinutes();//分
+        var seconds = d.getSeconds();//秒
+        console.log(hours + ":" + minutes + ":" + seconds);
+ 
+
+        //动态获取时间
+        setInterval(function(){        //按照指定的周期（已毫秒为单位）来执行函数  setInterval(函数（）{}，时间（毫秒）)
+            var d=new Date();
+            var hours = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        console.log(hours + ":" + minutes + ":" + seconds);
+        },1000 )    
+            
+    </script>
+</body>
+</html>

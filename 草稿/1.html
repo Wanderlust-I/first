@@ -5,52 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .menu>li{
+            float: left;
+            border: 1px solid red;
+            width: 100px;
+            height: 20px;
+            overflow: hidden;
+            text-align: center;
+            line-height: 20px;
+        }
+        .show{
+            background-color: yellow;
+            transition:margin-top 1s;
+        }
+        .showb{
+            background-color:skyblue;
+        }
+        .menu>li:hover>.show{
+            margin-top: -20px;
+        }
+    </style>
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    ul{
-        list-style: none;
-    }
-    .main>li{
-        float: left;
-        width: 100px;
-        height: 20px;
-        border: 1px solid red;
-        overflow: hidden;
-        text-align: center;
-        transition: overflow 2s linear 2s;
-    }
-    .main>li:hover{
-        overflow: visible ;
-    }
-</style>
 <body>
-        <ul class="main">
-            <li>菜单
-                <ul class="m">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+    <ul class="menu">
+        <li>
+            <p class="show">菜单</p>
+            <p class="showb">菜单</p>
         </li>
-        <li>菜单
-            <ul class="m">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    </li>
-    <li>菜单
-        <ul class="m">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li>
+            <p class="show">菜单</p>
+            <p class="showb">菜单</p>
+        </li>
+        <li>
+            <p class="show">菜单</p>
+            <p class="showb">菜单</p>
+        </li>
     </ul>
-</li>
-            
-        </ul>
-</body> 
+</body>
 </html>

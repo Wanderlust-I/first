@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes a {
+              
+            50%{
+                transform: translate(-50px);
+            }
+        }
+        @keyframes s {
+            50%{
+                transform: rotate(10deg);
+            }
+        
+        }
+        @keyframes f {
+            25%{
+                bottom: 300px;
+                left: 300px;
+            }
+            50%{
+                bottom: 0px;
+                left: 600px;
+            }
+            75%{
+                bottom: 300px;
+                left: 900px;
+            }
+            100%{
+                bottom: 0px;
+                left: 1200px;
+            }
+        }
+        .wave{
+            position: fixed;
+            bottom: 0;
+        }
+        .w1{
+            position: absolute;
+            bottom: 60px;
+            height: 70px;
+            animation: a 5s linear infinite;
+        }
+        .w2{
+            position: absolute;
+            bottom: 30px;
+            height: 70px;
+            animation: a 2s linear infinite;
+        }
+        .w3{
+            position: absolute;
+            bottom: 0px;
+            height: 70px;
+            animation: a 3s linear infinite;
+        }
+        .ship{
+            position: fixed;
+            bottom: 50px;
+            left: 20%;
+            animation: s 3s  infinite;
+        }
+        .fish{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            animation: f   6s  linear infinite;
+            z-index: -2;
+        }
+        .bc{
+            position:fixed;
+            z-index: -10;
+        }
+    </style>
+</head>
+<body>
+    <div class="ship">
+        <img class ="sp"src="海盗船/ship.png" alt="">
+    </div>
+    <div class="wave">
+        <img class="w1"  src="海盗船/wave1.png" alt="">
+        <img  class="w2" src="海盗船/wave2.png" alt="">
+        <img  class="w3" src="海盗船/wave3.png" alt="">
+    </div>
+    <div class="fh">
+        <img class="fish" src="海盗船/fish.png" alt="" class="fish1">
+    </div>
+    <div class="bg">
+        <img class="bc" src="海盗船/bg.png" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            .menu>li{
+             float: left;
+             width: 100px;
+             height: 20px;
+             background-color: red;
+            }
+            .submenu>li{
+                height: 0;
+              overflow: hidden;
+              transition: height 1s;
+            }
+
+            .menu>li:hover>.submenu>li{
+              height: 50px;
+              background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+            <ul class="menu">
+                <li>书籍
+                    <ul class="submenu">
+                        <li>js</li>
+                        <li>css</li>
+                        <li>h5</li>
+                    </ul>
+                </li>
+                <li>书籍
+                    <ul class="submenu">
+                        <li>js</li>
+                        <li>css</li>
+                        <li>h5</li>
+                    </ul>
+                </li>
+                <li>书籍
+                    <ul class="submenu">
+                        <li>js</li>
+                        <li>css</li>
+                        <li>h5</li>
+                    </ul>
+                </li>
+            </ul>
+    </body>
+    </html>

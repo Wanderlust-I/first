@@ -6,52 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
+        @keyframes n {
+            0%{
+                transform: rotate(0); 
+            }
+            100%{
+                transform: rotate(360deg);
+            }
         }
-        ul{
-            list-style: none;
+        img{
+            width: 100px;
+            height: 100px;
         }
-        ul>li{
-            margin-top: 100px;
-            width: 50px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            float: left;
+        .tu{
+            width: 100px;
+            height: 100px;
+            margin: 200px auto;
+            border-radius: 50%;
             overflow: hidden;
+            animation: n 5s linear infinite;
         }
-        .show{
-            background-color: pink;
-            height: 30px;
-            transition: margin-top 1s;
-
-        }
-        .click{
-            background-color: yellow;
-            height: 30px;
-        }
-        ul>li:hover>.show{
-            margin-top: -30px;
-        }
-
     </style>
 </head>
 <body>
-    <ul>
-        <li>
-            <p class="show">菜单</p>
-            <p class="click">菜单</p>
-        </li>
-        <li>
-            <p class="show">菜单</p>
-            <p class="click">菜单</p>
-        </li>
-        <li>
-            <p class="show">菜单</p>
-            <p class="click">菜单</p>
-        </li>
-    </ul>
+    <div class="tu">
+        <img src="图片.jpg" alt="">
+    </div>
 </body>
 </html>
