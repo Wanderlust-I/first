@@ -34,7 +34,7 @@
         console.log(hours + ":" + minutes + ":" + seconds);
  
 
-        //动态获取时间
+        //动态获取时间      //这里的function就是匿名函数,回调函数
         setInterval(function(){        //按照指定的周期（已毫秒为单位）来执行函数  setInterval(函数（）{}，时间（毫秒）)
             var d=new Date();
             var hours = d.getHours();

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            var a=8;
+            function fun(){
+              var a=7;
+              console.log(a);
+              function fun2(){
+                  console.log(a);
+              }
+              return fun2();
+            }
+             fun();
+            console.log(a);
+        </script>
+</body>
+</html>       

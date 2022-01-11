@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let r=2022; 
+        console.log(r);
+        const fun1= function(){   //函数表达式
+            console.log("hello world");
+        }
+        fun1();
+        function getName(){
+            return {name:"cjb"}; //返回属性加{}
+        }
+        var n= getName();
+        console.log(n.name);
+
+        let str=`hello
+        world`     //模板字符串可以换行
+        console.log(str)
+        let year="2022";
+        let month="1";
+        let date="11";
+        console.log(`${year}年${month}月${date}日`);//模板字符串里还可以用${}嵌入参数
+
+        //数组的解构赋值
+        let [a,b]=[10, 20];  //等同于let a=10;  let b=20;
+        console.log(a);
+        console.log(b);
+        [a,b]=[b,a];   
+        console.log(a);
+        console.log(b);
+
+        //对象的解构赋值
+        let {name,age}={name:"冲击波",age:0};
+        let uzi={
+        name:"冲击波",
+        age:0
+    }
+    function getN({name}){
+          return name;
+    }
+    console.log(getN(uzi));
+    </script>
+</body>
+</html>

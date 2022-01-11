@@ -71,10 +71,15 @@ console.log(sum);
            name:"在哪",//注意是逗号哦！！
            age:18, 
            //属性也可以是函数，则该属性为方法
-          myName:function (){
-               console.log("我的名字是"+this.name);
+
+        //   myName:function (){
+        //        console.log("我的名字是"+this.name);
+             //  }
+               myName(){    //简写形式
+                   console.log("我的名字是"+this.name);   
+               }
                 //this代表该对象
-       }
+       
         }
         //获取对象属性的方法
         console.log(girlfriend.name);
