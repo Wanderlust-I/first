@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //es5的面向对象
+         // es5是没有类的概念的，通过构造函数来实现类。
+        // 构造函数的函数名，首字母大写. 构造函数是用来创建对象用的。
+        function Dog(a,b){ 
+           this.name=a;
+           this.age=b;
+        }
+        var dog =new Dog("wuzi",10);
+        Dog.prototype.sayName=function(){   //原型对象protype：通过原型对象，为构造函数生成的对象赋予新的方法，注意不是具体的对象进行调用！
+            console.log(`${this.name}小糖人`);
+        }
+        function Dog2(a){
+            this.name=a;
+        }
+        Dog2.prototype=new Dog();  //不常用 了解即可 //原型链（继承）  继承的对象也可以使用其父级的方法
+        var ff=new Dog2("cjb");
+        ff.sayName();
+        console.log(dog.name);
+        dog.sayName();
+        
+
+        //es2015的面向对象
+        //支持类的概念
+        class Pig{
+            constructor(a,b){  //constructor表示构造函数
+          this.name=a;
+         this.age=b;
+            }
+            cjb(){
+            console.log(this.age);
+            }
+        }
+        let  dd=new Pig("wuzi",20);
+      
+        
+        class Son extends Pig{
+            constructor(a){
+                  super(a);    //super关键字 使用父级属性
+            }
+        }
+          let ss=new Son("ccc");
+        console.log(dd.name);
+        dd.cjb();
+       console.log(ss.name)
+
+       //练习
+       //定义一个 Person 类，让 Student 类和 Teacher 类继承 Person，为 Person 类添加 getInformation 方法，
+       //使 Student 类和 Teacher 类都可以通过此方法获取个人信息。
+       class Person{
+           constructor(name,age){
+                 this.name=name;
+                 this.age=age;
+           }
+        getInformation(){
+          console.log(this.name);
+          console.log(this.age)
+        }
+       }
+       class Student extends Person{
+           constructor(name,age){
+              super(name,age);
+           }
+       }
+       let stu=new  Student("nsml",15);
+       stu.getInformation();
+    </script>
+</body>
+</html>

@@ -42,7 +42,14 @@
         var seconds = d.getSeconds();
         console.log(hours + ":" + minutes + ":" + seconds);
         },1000 )    
-            
+           
+        
+        //练习：扩展 Date 对象实现如下功能，实现 dateFormate 方法，返回值是“xxxx 年 xx 月 xx 日”；
+        Date.prototype.dateFormate=function(){
+            console.log(`${this.getFullYear()}年${this.getMonth()+1}月${this.getDate()}日`);
+        }
+        var d=new Date();
+        d.dateFormate();
     </script>
 </body>
 </html>
