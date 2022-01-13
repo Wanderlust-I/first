@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">hello world</h1>
+    <h3>hello world</h3>
+    <h3>hello world</h3>
+    <h3>hello world</h3>
+    <h3>hello world</h3>
+   
+         <button class="btn">1</button>
+         <button class="btn">2</button>
+         <button class="btn">3</button>
+         <div class="box"></div>
+         <script>
+             //getElement方法 不常用
+            //  let h=document.getElementById("title");  //注意加“ ”
+            //  h.innerHTML="nmsl";
+            //  console.log(h.innerHTML);
+            // let btns=document.getElementsByClassName("btn");  
+            //  console.log(h);
+            // console.log(btns);
+            // for(i in btns){
+            //    btns[i].innerHTML="nmsl";
+            // }
+
+
+            //常用的选择器方法
+           let b=document.querySelector("h1");
+           b.innerHTML="nmsl";
+            let btns=document.querySelectorAll(".btn");
+            for(i in btns){
+                btns[i].innerHTML="？";
+            }
+           
+            let box=document.querySelector(".box"); //获取一个节点。不管能找到多少个，返回值都是一个 DOM 节点。如果是多个元素，它会返回第一个。
+             box.onmouseenter=function(){
+                  box.style.backgroundColor="blue";
+             }
+          box.onmouseleave=function(){
+              box.style.backgroundColor="skyblue";
+          }
+          
+          
+            for(i in btns){
+                btns[i].onclick=function(){
+                 box.style.backgroundColor="yellow";
+             }
+            }
+
+
+            //改变类
+            let hh=document.querySelectorAll("h3");
+            for(i in hh){
+                hh[i].onclick=function(){
+                  if(this.className==="red"){
+                     this.className="";
+                  }
+                  else
+                  this.className="red";
+                }
+            }
+           
+         </script>
+</body>
+</html>

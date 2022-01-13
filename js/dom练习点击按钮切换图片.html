@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   img{
+       width: 200px;
+       height: 200px;
+   }
+ 
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="1.jpg" alt="错误">
+    </div>
+    <button>1</button>
+    <button class="bb">2</button>
+    <button>3</button>
+    <script>
+        let btn=document.querySelectorAll("button");
+        let img=document.querySelector("img");
+       let bb=document.querySelector(".bb");
+        let srclist=["1.jpg","2.png","3.gif"];
+        for( let i in btn){   //一定要加let不然下面的图片数组的i没法用
+            btn[i].onclick=function(){
+                img.src=srclist[i];
+            }
+       }
+    //    bb.onclick=function(){
+    //         img.src=srclist[2];
+    //    }
+  
+    </script>
+</body>
+</html>

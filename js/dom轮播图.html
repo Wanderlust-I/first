@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 640px;
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+        .box{
+            width: 1920px;
+            height: 320px;
+            display: flex;
+            transition: transform 1s;
+        }
+
+        img{
+            width: 640px;
+            height: 320px;
+        }
+        .btn{
+            position: absolute;
+            bottom: 0;
+        }
+        /* .box:hover{
+            transform: translate(-640px);
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="1.jpg" alt="">
+            <img src="2.png" alt="">
+            <img src="3.gif" alt="">
+        </div>
+        <div class="btn">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+    </div>
+    <script>
+        let btns=document.querySelectorAll("button");
+        let box=document.querySelector(".box");
+        for(let i in btns){
+            btns[i].onclick=function(){
+                box.style.transform=`translate(${(-i*640)}px)`
+            }
+        }
+    </script>
+</body>
+</html>
