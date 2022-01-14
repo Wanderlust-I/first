@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <button>按钮</button>
+    <ul class="list">
+        <li>112</li>
+        <li>345</li>
+        <li>565</li>
+    </ul>
+
+    
+    <script>
+        let btn=document.querySelector("button");
+        let ul=document.querySelector("ul");
+        let input=document.querySelector("input");
+        let list=document.querySelectorAll(".list li");
+        btn.onclick=function(){
+                                        
+            // ul.innerHTML=`<li>项目</li>
+            // <li>项目</li>
+            // <li>项目</li>`
+             let li=document.createElement("li");//创建节点
+            let txt=document.createTextNode(input.value);//文本框的value就是内容
+            input.value=null;  //输入值后文本框可以自动清空
+            ul.appendChild(li); 
+             li.appendChild(txt);
+        }
+        for (let i in list){
+                 list[i].onclick=function(){
+                     ul.removeChild(this);
+                 }
+             }
+    </script>
+</body>
+</html>
