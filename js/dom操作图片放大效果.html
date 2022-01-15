@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list img{
+            width: 300px;
+            height: 200px;
+        }
+        .biglist img{
+            width: 600px;
+            height: 400px;
+        }
+        .biglist{
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="list">
+            <img src="1.jpg" alt="">
+            <img src="2.png" alt="">
+            <img src="3.gif" alt="">
+        </div>
+        <div class="biglist"></div>
+        <script>
+            let imglist=document.querySelectorAll(".list img");
+            let biglist=document.querySelector(".biglist");
+            let smalllist=document.querySelector(".list");
+            for(let i in imglist){
+                imglist[i].onmouseenter=function(){
+                      biglist.innerHTML=`<img src="${this.src}"" alt="">`
+                }
+                imglist[i].onmouseleave=function(){
+                    biglist.innerHTML=` `
+                }
+            }
+        smalllist.onmousemove=function(e){
+               let x=e.clientX;
+               let y=e.clientY;
+               biglist.style.top=y+10+`px`;
+               biglist.style.left=x+10+`px`;
+        }
+          
+        </script>
+</body>
+</html>
