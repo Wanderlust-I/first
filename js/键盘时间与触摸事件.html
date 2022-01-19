@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color:yellow;
+        position: absolute;
+    }
+</style>
+<body>
+    <div class="box"></div>
+    <script>
+        let box =document.querySelector(".box");
+        document.onkeydown=function(e){
+          // console.log(box.offsetTop);   //offsetTop可以获取边距
+            switch(e.keyCode){
+                 case 37:box.style.left = box.offsetLeft - 5 + "px";break;  
+                case 38:box.style.top = box.offsetTop - 5 + "px";break;
+                case 39:box.style.left = box.offsetLeft + 5 + "px";break;
+                case 40:box.style.top = box.offsetTop + 5 + "px";break;
+            }
+        }
+            box.ontouchstart = function(){
+            console.log("1");
+        }
+        box.ontouchend = function(){
+            console.log("0");
+        }
+        box.ontouchmove = function(){
+            console.log("move");
+        }
+    
+    </script>
+</body>
+</html>

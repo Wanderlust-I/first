@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>5秒后跳转到百度...</h1>
+    <button>算了</button>
+       <script>
+           document.querySelector("button").onclick=function(){
+               clearTimeout(timer);
+           }
+           let timer=setTimeout(function(){
+            location.href="https://baidu.com";
+           },5000)
+               
+           
+          
+       </script>
+</body>
+</html>

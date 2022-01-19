@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .small{
+            width: 50px;
+            height: 50px;
+            background-color: pink;     
+        }
+        .medium{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .big{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        } */
+
+
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color:yellow;
+            display: none;
+        }
+    </style>
+</head>
+<body> 
+        <!-- <div class="big">
+             <div class="medium">
+                <div class="small"></div>
+             </div>
+        </div>  
+        <script>
+            let box=document.querySelector(".box");
+             let sm=document.querySelector(".small");
+             let med=document.querySelector(".medium")
+             let big=document.querySelector(".big");
+             sm.addEventListener("click",function(e){
+                  console.log("small")
+                  e.stopPropagation();
+             })
+             med.addEventListener("click",function(){
+                  console.log("medium")
+             })
+             big.addEventListener("click",function(){
+                  console.log("big")
+             })
+        </script> -->
+       <button class="show">按钮</button>
+        <div class="box">
+            <button class="close">隐藏</button>
+        </div>
+        <script>
+            let show=document.querySelector(".show");
+            let close=document.querySelector(".close");
+            let box=document.querySelector(".box");
+            show.addEventListener("click",function(){
+                box.style.display="block";
+            })
+            box.addEventListener("click",function(){
+                box.style.backgroundColor="red";
+            })
+            close.addEventListener("click",function(e){
+                box.style.display="none";
+                e.stopPropagation();
+            })
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        button{
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>返回顶部</button>
+    <script>
+        let btn=document.querySelector("button");
+        btn.onclick=function(){
+            window.scrollTo(0,0)   //返回顶部
+        }
+
+        //没用闭包，多了timer全局变量
+        // let timer=null;
+        // window.onscroll=function(){       
+        //     if(timer!==null){
+        //         clearTimeout(timer);
+        //     }
+        //     timer=setTimeout(() => {
+        //         console.log(document.documentElement.scrollTop);
+        //         if(document.documentElement.scrollTop>0){
+        //          btn.style.display=`block`;
+        //     }
+        //     else
+        //     btn.style.display=`none`;
+        //     }, 500);  
+        // }
+
+
+        //使用闭包
+        let fangdou=function(fn,delay){
+            let timer=null;
+             return function(){
+                     if(timer){
+                         clearTimeout(timer);
+                     }
+                     timer=setTimeout(fn, delay);
+             }
+        }
+
+       function fnb(){
+           console.log("111");
+             if(document.documentElement.scrollTop>0){
+                 btn.style.display=`block`;
+             }
+             else
+             btn.style.display=`none`;
+         }
+         window.onscroll=fangdou(fnb,500);
+       
+    </script>
+</body>
+</html>

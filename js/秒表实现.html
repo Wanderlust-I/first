@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button class="start">开始</button>
+        <button class="pause">暂停</button>
+        <button class="end">结束</button>
+        <h1 class="time"></h1>
+        <script>
+            let start=document.querySelector(".start");
+            let pause=document.querySelector(".pause");
+            let end=document.querySelector(".end");
+            let time=document.querySelector(".time");
+            let second=0;
+            let ms=0;
+            time.innerHTML=`${second}:${ms}`;
+          let  timer=null;
+           start.onclick=function(){
+               clearInterval(timer);
+                 timer=setInterval(function(){
+                    if(ms==9){
+                        second++;
+                        ms=0;
+                    }
+                    ms++;
+                 time.innerHTML=`${second}:${ms}`;
+                 },100)
+            } 
+            pause.onclick=function(){
+                clearInterval(timer);
+            }   
+            end.onclick=function(){
+                second=0;
+                ms=0;
+                clearInterval(timer);
+                time.innerHTML=`${second}:${ms}`;
+            }
+        </script>
+</body>
+</html>

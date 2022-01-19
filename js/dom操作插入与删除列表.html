@@ -32,11 +32,14 @@
             ul.appendChild(li); 
              li.appendChild(txt);
         }
-        for (let i in list){
-                 list[i].onclick=function(){
-                     ul.removeChild(this);
-                 }
-             }
+        // for (let i in list){
+        //          list[i].onclick=function(){
+        //              ul.removeChild(this);
+        //          }
+        //      }
+        ul.onclick=function(e){
+            ul.removeChild(e.target);
+        }  
     </script>
 </body>
 </html>
