@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ran=Math.floor(Math.random()*100+1);
+       alert("猜数字游戏");
+       function  guess(){
+        let num=prompt("请输入数字");  //prompt弹窗  可以有两个参数  第一个为描述文字 第二个为文本框默认内容
+        if(num==ran){
+            alert("猜对了");
+        }
+        else if(num>ran){
+            alert("大了")
+            guess();
+        }
+        else if(num<ran){
+            alert("小了");
+            guess();
+        }
+       }
+     guess();
+
+       
+    </script>
+</body>
+</html>

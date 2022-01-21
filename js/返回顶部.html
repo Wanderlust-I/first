@@ -52,6 +52,17 @@
                      timer=setTimeout(fn, delay);
              }
         }
+        function jieliu(fn,delay){
+                let mark =true;
+                return function(){
+                    if(mark){
+                    setTimeout(()=>{
+                        fn();
+                        mark=true;
+                    }, delay);
+                }
+                mark=false;
+                }
 
        function fnb(){
            console.log("111");
@@ -61,6 +72,7 @@
              else
              btn.style.display=`none`;
          }
+
          window.onscroll=fangdou(fnb,500);
        
     </script>
