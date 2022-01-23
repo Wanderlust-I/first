@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $("button").click(function(){  /*$为jQuer的简写*/  /* $()包装，将dom对象包装成jQuery对象，之后就可以使用jQuery的方法了*/
+            console.log($("button"));
+            console.log(this); //然而这里的this是dom对象，并不是调用函数的jQuery对象
+        })
+    </script>
+</body>
+</html>
