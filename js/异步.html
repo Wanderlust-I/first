@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+        //  let target=500;
+        // function get(){
+        //     setTimeout(() => {
+        //         return target;
+        //     }, 500);   //模拟日常的延迟场景
+        //  }
+        //  let result=get();
+        //  console.log(result);  //结果为undefined
+      
+        
+    //1.用回调函数
+//    let target=10;
+//    function get(fn){
+//        setTimeout(() => {
+//            fn(target);
+//        }, 1000);
+//    }
+//    get((d)=>{
+//        console.log(d);
+//    });
+
+//练习：获取两个数据并拼接
+// let data1="wu",data2="zi";
+// function getfirst(fn){
+//      setTimeout(() => {
+//          fn(data1)
+//      }, 5000);
+// }
+// function getlast(fn){
+//      setTimeout(() => {
+//          fn(data2)
+//      }, 5000);
+// }
+// getfirst((first)=>{
+//     getlast((last)=>{
+//         let name=first+last;
+//     console.log(name);
+//     })
+// });
+
+
+//2.promise
+// let target=10;
+// function get(){
+//     return new Promise((resolve)=>{
+//              setTimeout(() => {
+//                  resolve(target);
+//              }, 1000);
+//     })
+// }
+// get().then((d)=>{
+//     console.log(d);
+// });
+
+
+//练习
+// let data1="wu",data2="zi";
+// function getfirst(){
+//     return new Promise((resolve)=>{
+// setTimeout(() => {
+//     resolve(data1);
+// }, 1000);
+//     })
+// }
+
+// function getlast(){
+//     return new Promise((resolve)=>{
+// setTimeout(() => {
+//     resolve(data2);
+// }, 1000);
+//     })
+// }
+// getfirst().then((first)=>{
+//     getlast().then((last)=>{
+//         console.log(first+last);
+//     })
+ 
+// });
+
+//3.async函数  前面都一样 最后使用async 用await调用promise对象 就不用使用then了
+let target=10;
+function get(){
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            resolve(target);
+        }, 1000);
+    });
+}
+
+async function fn(){
+    let result=await get();  
+    console.log(result);
+}
+fn();
+
+        </script>
+</body>
+</html>
