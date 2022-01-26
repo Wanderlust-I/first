@@ -15,6 +15,13 @@ router.get("/2",async(ctx)=>{
 router.get("/image",async(ctx)=>{
     ctx.body=`<image src='/image/home.png'>`
 })
+router.get("/doc",async(ctx)=>{
+   
+    ctx.body=`
+    <link rel="stylesheet" href="/css/1.css">
+    <p >nmsl</p>
+    `
+})
 app.use(router.routes())
 app.listen(3000,()=>{
     console.log("server is running")

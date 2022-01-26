@@ -1,0 +1,20 @@
+{% extends "./views/layout.html"%}
+{% block content%}
+<div class=""></div>
+
+    <h1>hello</h1>
+    <h1>{{title}}</h1>
+    <div>
+        <ul>
+            {%for student in studentlist%}
+            <li>{{student}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% if islogin %}
+    <p>用户名{{uname}}</p>
+    {% else %}
+   <a href="/form">登录</a>
+    {% endif%}
+    {% include "./views/include.html"%}
+    {% endblock%}
