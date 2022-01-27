@@ -7,15 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <button>1</button>
-
-    <button>2</button>
-    <button>3</button>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-         $("button").click(function(){
-             console.log("hello world");
-         });
+        let a=122;
+      function get(){
+          return new Promise((resolve)=>{
+              setTimeout(() => {
+                  resolve(a);
+              }, 1000);
+          });
+      }
+    get().then((d)=>{
+        console.log(d);
+    })
     </script>
 </body>
 </html>

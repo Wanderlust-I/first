@@ -11,6 +11,34 @@
             <a href="/">首页</a>
             <a href="/doc">文档</a>
         </div>
+        <button>ajax跳转</button>
+        <script>
+            let btn=document.querySelector("button");
+            btn.onclick=function(){
+               myajax("get","/fruits").then((b)=>{
+                   alert(b);
+               })
+            }
+                function myajax(method,url){  
+                    return new Promise((resolve)=>{
+                        let xhr= new XMLHttpRequest();
+                      xhr.open(method,url)  ;  //第一个参数为请求方法，第二个为路径
+                      xhr.send(); //发送请求        //封装ajax方法作为练习
+                    xhr.onreadystatechange=function(){
+                   if(xhr.readyState===4&&xhr.status===200){  //readyState: 0: 请求未初始化     //status为状态码：200 404等
+                                                                 // 1: 服务器连接已建立
+                                                                 // 2: 请求已接收
+                                                                 // 3: 请求处理中
+                                                                  // 4: 请求已完成，且响应已就绪
+                   resolve (xhr.responseText);
+                   }
+                }
+               
+                    });
+                   
+                }
+            
+        </script>
 </body>
 </html>
 {% block content %}{% endblock %}

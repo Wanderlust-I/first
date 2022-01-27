@@ -3,11 +3,21 @@ const views=require("koa-views");
 const nunjucks=require("nunjucks");
 const router=require("koa-router")();
 const parser=require("koa-parser");
+const session=require("koa-session");
+const keys  = require("nunjucks/src/lib");
 const app=new Koa();
+app.keys=["123456"]
+app.use(session({
+    maxAge:20000
+},app))
 app.use(parser());
+
+
+let fruits=["香蕉","苹果","鸭梨"]
+
 router.get("/",async(ctx)=>{
-    ctx.cookies.set("user","admin")
-    let studentlist=["小明","小红","小亮"];
+   // ctx.cookies.set("user","admin")
+   let studentlist=["小明","小红","小亮"];
     await ctx.render("index",{
         title:"首页",
         studentlist:studentlist,
@@ -16,20 +26,57 @@ router.get("/",async(ctx)=>{
     });
 })
 
+router.get("/fruits", async ctx=>{
+ctx.body=fruits;
+})
+router.post("/fruits/fruit",async ctx=>{
+    let fruit=ctx.request.body.fruit;
+    fruits.push(fruit);
+    ctx.body=fruits;
+})
+router.delete("/fruits/fruit/:id",async ctx=>{
+    let id=ctx.params.id;
+    fruits.splice(id,1);
+    ctx.body=fruits;
+
+})
+router.put("/fruits/fruit/:id",async ctx=>{
+    let id=ctx.params.id;
+    let fruit=ctx.request.body.fruit;
+    fruits.splice(id,1,fruit)
+    ctx.body=fruits;
+})
+
 //实现计数网页刷新次数
+// router.get("/get",async ctx=>{
+// let count =ctx.cookies.get("count");
+// if(count>0)
+//     {
+//         count++;
+//         ctx.cookies.set("count",count,{
+//             maxAge:2000   //maxAge设置cookie过期时间
+//         })
+//     }
+//     else
+//     {
+//         count=1;
+//         ctx.cookies.set("count",1)
+//     }
+//     ctx.body=count;
+// })
 router.get("/get",async ctx=>{
-let count =ctx.cookies.get("count");
-if(count>0)
-    {
+   let count= ctx.session.count;
+    if(count>0){
         count++;
-        ctx.cookies.set("count",count)
+        ctx.session.count=count;
+        ctx.body=count;
     }
     else
     {
         count=1;
-        ctx.cookies.set("count",1)
+        ctx.session.count=count;
+        ctx.body=count;
     }
-    ctx.body=count;
 })
 router.get("/doc",async(ctx)=>{
 await ctx.render("index",{title:"文档"})
