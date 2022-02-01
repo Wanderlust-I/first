@@ -1,4 +1,5 @@
 const Koa=require("Koa");
+const static=require("koa-static")
 const views=require("koa-views");
 const nunjucks=require("nunjucks");
 const router=require("koa-router")();
@@ -6,6 +7,7 @@ const parser=require("koa-parser");
 const session=require("koa-session");
 const keys  = require("nunjucks/src/lib");
 const app=new Koa();
+app.use(static(__dirname+"/public"))
 app.keys=["123456"]
 app.use(session({
     maxAge:20000

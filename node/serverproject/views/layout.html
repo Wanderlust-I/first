@@ -11,10 +11,29 @@
             <a href="/">首页</a>
             <a href="/doc">文档</a>
         </div>
-        <button>ajax跳转</button>
+        <button class="aj">ajax跳转</button>
+        <button class="btn0">增</button>
+        <button class="btn1">删</button>
+        <button class="btn2">改</button>
+        <button class="btn3">查</button>
+        <script src="/js/axios.js"></script>
         <script>
-            let btn=document.querySelector("button");
-            btn.onclick=function(){
+            let aj=document.querySelector(".aj");
+            let btn0=document.querySelector(".btn0");
+            let btn1=document.querySelector(".btn1");
+            let btn2=document.querySelector(".btn2");
+            let btn3=document.querySelector(".btn3");
+            btn3.onclick=function(){
+                axios.get("/fruits").then(res=>{
+                 alert(res.data);
+                })
+            }
+            btn2.onclick=function(){
+                axios.put("/fruits/fruit/0",{fruit:"nima"}).then(res=>{
+                    console.log(res.data)
+                })
+            }
+            aj.onclick=function(){
                myajax("get","/fruits").then((b)=>{
                    alert(b);
                })

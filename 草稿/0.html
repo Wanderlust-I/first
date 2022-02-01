@@ -8,17 +8,21 @@
 </head>
 <body>
     <script>
-        let a=122;
-      function get(){
-          return new Promise((resolve)=>{
-              setTimeout(() => {
-                  resolve(a);
-              }, 1000);
-          });
-      }
-    get().then((d)=>{
-        console.log(d);
-    })
+        let a=13;
+        function get(){
+            return new Promise((resolve)=>{
+                setTimeout(() => {
+                    resolve(a);
+                }, 1000);
+            });
+        }
+    async function fn (){
+       let b= await get();
+       console.log(b);
+    }
+    fn();
+    
+       
     </script>
 </body>
 </html>
