@@ -17,8 +17,11 @@ export default({
      }
 
  },
+ methods:{
  senddata(){
      this.$emit("event",this.n)
  }
+ }
+
 })
 </script>
