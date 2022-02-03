@@ -40,6 +40,25 @@ dsasddaa
   <h1>{{time | split}}</h1>
 </div>
   
+  <div>
+ 
+    <form  @submit.prevent="postData">
+      <label for="">用户:</label><input type="text" v-model="formData.username">
+      <label for="">密码:</label><input type="text" v-model="formData.password">
+      <label for="">性别:</label>
+      <label for="">男</label> <input type="radio"  value="男" v-model="formData.sex">
+            <label for="">女</label> <input type="radio" value="女" v-model="formData.sex">
+            <label for="">爱好</label>
+            <select name="" id="" v-model="formData.hobby">
+              <option value="eat">吃</option>
+              <option value="drink">喝</option>
+            </select>
+            <label for="">技能</label>
+            <label for="">c</label><input type="checkbox" v-model="formData.skill">
+             <label for="">java</label><input type="checkbox" v-model="formData.skill">
+             <button>提交</button>
+    </form>
+  </div>
 
 
   </div>
@@ -67,18 +86,31 @@ export default {
         childdata:'',
         isLogin:false,
         studentList:[{id:15,name:"xiaoming",age:10},{id:15,name:"xiaopeng",age:12},{id:15,name:"xiaohong",age:15}],
-        time:"2020-02-01"
+        time:"2020-02-01",
+        formData:{ 
+        username:'',
+        password:'',
+        sex:'',
+        hobby:'',
+        skill:''
+        }
+       
       };
 },
+  mounted(){
+
+  alert(window.getComputedStyle(this.$refs.boox).height);
+  },
+
 methods:{
   change(n){
         this.childdata=n;
       }
   },
-  mounted(){
+    postData(){
+    console.log(this.formData);
+  },
 
-  alert(window.getComputedStyle(this.$refs.boox).height);
-  }
 }
 
 </script>

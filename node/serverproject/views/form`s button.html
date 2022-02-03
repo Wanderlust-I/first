@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">查询</button>
+    <button class="btn2">增加</button>
+    <button class="btn3">修改</button>
+    <button class="btn4">删除</button>
+    <script src="/js/axios.min.js"></script>
+<script>
+    document.querySelector(".btn1").onclick=function(){
+      axios.get("/fruits").then(res=>{
+          console.log(res.data);
+      })
+    }
+    document.querySelector(".btn2").onclick=function(){
+        axios.post("/fruits",{fruit:"???"}).then(res=>{
+            console.log(res.data)
+        })
+    }
+    document.querySelector(".btn4").onclick=function(){
+        axios.delete("/fruits/1",).then(res=>{
+            console.log(res.data)
+        })
+    }
+    document.querySelector(".btn3").onclick=function(){
+        axios.put("/fruits/1",{fruit:"nnnnn"}).then(res=>{
+            console.log(res.data)
+        })
+    }
+
+</script>
+</body>
+
+</html>
