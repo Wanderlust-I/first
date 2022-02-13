@@ -23,6 +23,22 @@
   <input type="submit">
   </form>
 
+
+<div>
+  <form @submit.prevent="postfruit" >
+    <label for="">水果 </label>
+  <input type="text" v-model="fruit">
+    <button>添加</button>
+  </form>
+  
+
+  <ul>
+    <li v-for="(fruit,id) of fruits" :key="id" >  
+      {{fruit}}
+       <button>删除</button></li>
+  </ul>
+
+</div>
 </div>
 </template>
 
@@ -38,14 +54,30 @@ export default {
       sex:"",
       skill:"",
       hobby:[]
-    }
+    },
+    fruit:"",
+    fruits:[]
   }
 
   },
     methods:{
       getform(){
           console.log(this.formData)
+      },
+      getfruit(){
+        axios.get("http://127.0.0.1:2200/fruits").then(res=>{
+          this.fruits=res.data;
+        })
       }
+  },
+  postfruit(){
+    axios.post("http://127.0.0.1:2200/fruits",{fruit:this.fruit}).then(res=>{
+   this.getfruit();
+    })
+  },
+  
+  created(){
+    this.getfruit();
   }
 
 }
