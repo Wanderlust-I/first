@@ -6,12 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
-            background-color: blue;
+        .div1{
+            /*单行省略*/
+            /*步骤：
+            1.设置宽度  width
+            2.强制文本在一行显示   white-space: nowrap; 
+            3.隐藏溢出内容         overflow: hidden;
+            4.溢出进行省略           text-overflow: ellipsis;        * /         
+            /* height: 100px; */
+            background-color: skyblue;
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;   /*  文本  溢出   省略*/
+            white-space: nowrap;     /* 空白  空格   不换行 */   /*即强制在一行显示*/
+        }
+        /*多行*/
+        .divn{
+            height: 200px;
+            widows: 200px;
+            background-color: pink;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp:2 ;
         }
     </style>
 </head>
 <body>
-        <div></div>
+        <div class="div1">asdsadadd
+            sadadsadaasdsadsd
+            scxczsasdadds
+            scxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdadds
+            scxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdadds
+            scxczsasdaddsscxczsasdaddsscxczsasdadds
+        </div>
+        <div class="divn">
+            sadadsadaasdsadsd
+            scxczsasdadds
+            scxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxcz
+            sasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddsscxczsasdaddssadadsadaasdsadsddfsf
+        </div>
 </body>
 </html>

@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var person1={
+                name:'xiaoming',
+                phoneBattery:10,
+                charge:function (level1,level2){
+                    this.phoneBattery=level1+level2;
+                }
+            }
+
+            var person2={
+                name:'xiaohong',
+                phoneBattery:20
+            }
+
+            person1.charge(40,60);
+            console.log(person1);
+            
+            //call可以传入多个参数
+        //    person1.charge.call(person2,60,30)
+        //apply只能数组
+          // person1.charge.apply(person2,[60,30])
+          //bind
+          const charge2 =person1.charge.bind(person2);
+          charge2(50,56);
+            console.log(person2)
+
+        </script>
+    </body>
+    </html>

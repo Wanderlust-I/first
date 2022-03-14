@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            //隐式绑定
+            var girl={
+                name:'xiaohong',
+                say:function (){
+                    console.log("my girlfriend is "+this.name)
+                }
+            }
+            girl.say();
+
+            //硬性绑定
+            var girl1={
+                name:'xiaohong',
+                say:function (){
+                    console.log("my girlfriend is "+this.name)
+                }
+            }
+            var girl2={
+                name:'xiaobai'
+            }
+            var girl3={
+                name:'xiaohuang'
+            }
+            girl1.say.call(girl2);
+            girl1.say.call(girl3);
+
+            //构造函数绑定
+             function lover(name){
+             this.name=name,
+             this.say=function (){
+                 console.log('my wife is '+this.name)
+             }
+             }
+             xiaohong =new lover('xiaohong');
+             xiaohong.say();
+        </script>
+</body>
+</html>

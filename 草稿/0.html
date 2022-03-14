@@ -8,21 +8,51 @@
 </head>
 <body>
     <script>
-        let a=13;
-        function get(){
-            return new Promise((resolve)=>{
-                setTimeout(() => {
-                    resolve(a);
-                }, 1000);
-            });
+        //默认绑定
+        function girl(){
+            console.log(this)
         }
-    async function fn (){
-       let b= await get();
-       console.log(b);
+    girl();   
+
+    //隐式绑定
+    var yinshigirl={
+        name:'xiaohong',
+        height:140,
+        weight:180,
+        detail:function (){
+            console.log(this.name),
+            console.log(this.weight)
+        }
     }
-    fn();
-    
-       
+    yinshigirl.detail();
+
+    //硬性绑定
+    var girl1={
+        name:'xiaohong',
+        say:function(){
+            console.log(this.name)
+        }
+    }
+    var girl2={
+        name:'xioabai'
+    }
+    var girl3={
+        name:'xiaohuang'
+    }
+    girl1.say.call(girl2)
+    girl1.say.call(girl3)
+
+    //构造函数
+    function lover(name){
+    this.name=name,
+    this.say=function (){
+        console.log(this.name);
+    }
+    }
+    xiaohong= new lover('xiaohong');
+    xiaohong.say();
+
+
     </script>
 </body>
 </html>
