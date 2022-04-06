@@ -1,0 +1,17 @@
+<script>
+    let arr=[1,2,3,4,5,56,66]
+    function search(value){
+        let start=0,end=arr.length-1,middle,element;
+        while(start<end){
+            middle=Math.floor((start+end)/2);
+            element=arr[middle];
+            if(value==element)
+            return middle;
+            else if(value<=middle){
+            end=middle-1}
+             else 
+             start=middle+1;
+        }
+        
+    }
+</script>
